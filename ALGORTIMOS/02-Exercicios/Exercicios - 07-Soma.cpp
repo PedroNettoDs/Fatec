@@ -7,15 +7,15 @@ int main ()
 	
 	//Entrada
 	printf("Informe o primeiro numero: ");
-	scanf("$int", number1);
+	scanf("%d", &number1);
 	
 	printf("Informe o segundo numero: ");
-	scanf("$int", number2);
+	scanf("%d", &number2);
 	
 	//Processamento
 	soma = number1 + number2;
 	
 	//Saida
-	printf("A soma dos numeros e: ", &soma);
+	printf("O resultado da soma e: %d\n", soma);
 	return 0;
 }
