@@ -11,7 +11,7 @@ int main ()
 	
 	//Processamento 
 	conversao = (fahrenheit - 32) * (5.0 / 9.0);
-	//obs: caso a divis�o fosse "5/9" o resultado daria 0, pois n�o foi marcado como float
+	//obs: caso a divisao fosse "5/9" o resultado daria 0, pois nao foi marcado como float
 	
 	//Saida
 	printf("Temperatuda convertida = %.2f\n", conversao);	
