@@ -5,7 +5,7 @@ int main (){
     float P1, P2, P3, media, calculo;
     
     // entrada
-    printf ("Calculadora de média\nInsira a nota da Prova 1: ");
+    printf ("Calculadora de mï¿½dia\nInsira a nota da Prova 1: ");
     scanf ("%f", &P1);
     
     printf ("Informe a nota da Prova 2: ");
@@ -28,4 +28,4 @@ int main (){
     
     return 0;
 }
-
+//Ne--o

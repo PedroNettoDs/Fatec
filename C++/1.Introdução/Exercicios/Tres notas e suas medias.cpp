@@ -2,11 +2,11 @@
 
 int main()
 {
-    // Declarando variáveis
+    // Declarando variï¿½veis
     float nota1, nota2, nota3, media;
 
     // Entrada de dados
-    printf("Insira as três notas: \n");
+    printf("Insira as trï¿½s notas: \n");
     scanf("%f", &nota1);
     scanf("%f", &nota2);
     scanf("%f", &nota3);
@@ -17,8 +17,8 @@ int main()
     nota3 = nota3 * 0.4;
     media = nota1 + nota2 + nota3;
 
-    // Saída
-    printf("A média ponderada das notas é %f\n", media);
+    // Saï¿½da
+    printf("A mï¿½dia ponderada das notas ï¿½ %f\n", media);
     return 0;
 }
-
+//Ne--o

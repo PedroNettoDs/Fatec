@@ -15,5 +15,6 @@ int main(){
 		} else {
 			printf ("O numero e par.");
 		}
-	return 0;
+    return 0;
 }
+//Ne--o

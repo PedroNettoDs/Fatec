@@ -14,11 +14,13 @@ int main (){
 	printf ("Insira o valor de N: ");
 	scanf ("%d", &n);
 	
-	//repetição
+	//repetiï¿½ï¿½o
 	do {
 		f =  f * loop;
 		s = s + (1 / f);
 		loop++;
 	} while (loop <= n);
 	printf ("A soma de todos de S + Divisao da fatorizacao ate %d : %f", n, s);
+    return 0;
 }
+//Ne--o

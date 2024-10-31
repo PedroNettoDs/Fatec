@@ -28,17 +28,11 @@ int main()
     printf("Insira a nota do terceiro aluno: \n");
     scanf("%d", &nota1);
 
-<<<<<<< HEAD
-    printf("Insira o nome e nota do terceiro aluno: \n");
-    scanf("%s %d", aluno3, &nota3);
-
-    // Saida
-=======
     // Saída
->>>>>>> 01aaa1b7a41b814bb794a8a4332ee878f281c24d
     printf("Os alunos sao: \n");
     printf("%s: %d\n", aluno1, nota1);
     printf("%s: %d\n", aluno2, nota2);
     printf("%s: %d\n", aluno3, nota3);
     return 0;
 }
+//Ne--o

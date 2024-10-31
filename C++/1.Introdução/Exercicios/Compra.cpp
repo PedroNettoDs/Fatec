@@ -2,7 +2,7 @@
 
 int main()
 {
-	//Declarando variáveis
+	//Declarando variï¿½veis
 	int salgado, coca, lanche, total;
 
 	//Entrada
@@ -23,5 +23,6 @@ int main()
 	//
 	
 	printf ("o valor dos produtos selecionados R$ %d", total);
-	return 0;
+    return 0;
 }
+//Ne--o

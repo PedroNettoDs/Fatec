@@ -23,5 +23,6 @@ int main()
 	
 	//Saida
 	printf("O seu calculo deu = %.2f\n", soma);	
-	return 0;	
+    return 0;
 }
+//Ne--o

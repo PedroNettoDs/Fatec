@@ -31,7 +31,9 @@ main (){
 			printf ("seu salario foi atualizado pra: R$ = %.2f\n", salario);
 		break;
 		case 5:
-			printf ("seu salario não foi atualizado");
+			printf ("seu salario nï¿½o foi atualizado");
 		break;
 	}
+    return 0;
 }
+//Ne--o

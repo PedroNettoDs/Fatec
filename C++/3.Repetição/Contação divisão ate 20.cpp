@@ -17,4 +17,4 @@ int main (){
     	printf ("O calculo deu: %f", s);
     return 0;
 }
-
+//Ne--o

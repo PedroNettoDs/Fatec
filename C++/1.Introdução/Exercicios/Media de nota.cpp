@@ -21,6 +21,6 @@ int main()
 	
 	//Saida
 	printf("A media final e %f", mf);
-	return 0;		
+    return 0;
 }
-
+//Ne--o

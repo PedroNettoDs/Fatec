@@ -17,5 +17,6 @@ int main()
 	
 	//Saida
 	printf ("O numero %lf\nao quadrado %lf\nao cubo %lf\nsua raiz %lf\n", number, quadrado, cubo, raiz);
-return 0;
+    return 0;
 }
+//Ne--o

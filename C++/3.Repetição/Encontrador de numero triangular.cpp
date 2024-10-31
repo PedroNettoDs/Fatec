@@ -21,7 +21,6 @@ int main() {
     } else {
         printf("%d = nao triangular.\n", x);
     }
-
     return 0;
 }
-
+//Ne--o

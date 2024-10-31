@@ -14,7 +14,7 @@ int main (){
     
     printf ("Tabela de quartos\nA = Presidencial\nB = Luxo\nC = Conforto\nD = Economica\nInforme qual apartamento ele se hospedou: ");
     scanf (" %c", &apto);
-    apto = toupper(apto); // Converter para maiúscula
+    apto = toupper(apto); // Converter para maiï¿½scula
     
     printf ("Informe quantos dias permaneceu: ");
     scanf ("%d", &dias);
@@ -37,7 +37,7 @@ int main (){
     printf ("O cliente %s precisa pagar: R$ %.2f\n", hospede, valor);
     printf ("Ele consumiu algo?\n S (Sim) ou N (Nao): ");
     scanf(" %c", &consumo);
-    consumo = toupper(consumo); // Converter para maiúscula
+    consumo = toupper(consumo); // Converter para maiï¿½scula
     
     if (consumo == 'S'){
         printf ("Informe o valor de consumo: R$ ");
@@ -52,4 +52,4 @@ int main (){
 
     return 0;
 }
-
+//Ne--o

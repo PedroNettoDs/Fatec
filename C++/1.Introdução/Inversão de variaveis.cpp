@@ -18,5 +18,6 @@ int main()
 	
 	//Saida
 	printf("Invertido agora: Primeiro: %d\tSegundo: %d\n", conteudo1, conteudo2);
-	return 0;
+    return 0;
 }
+//Ne--o

@@ -18,6 +18,6 @@ int main()
 	
 	//Saida
 	printf("A media poderada das notas sao %f", media);
-	return 0;		
+    return 0;
 }
-
+//Ne--o

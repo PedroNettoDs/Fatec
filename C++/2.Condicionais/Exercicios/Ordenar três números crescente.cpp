@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    // Declarando variáveis
+    // Declarando variï¿½veis
     int number1, number2, number3;
 
     // Entrada
@@ -12,7 +12,7 @@ int main() {
     printf("Informe o terceiro numero: ");
     scanf("%d", &number3);
 
-    // Processamento e saída
+    // Processamento e saï¿½da
     if (number1 <= number2 && number1 <= number3) {
         if (number2 <= number3) {
             printf("%d, %d, %d\n", number1, number2, number3);
@@ -32,7 +32,6 @@ int main() {
             printf("%d, %d, %d\n", number3, number2, number1);
         }
     }
-
     return 0;
 }
-
+//Ne--o

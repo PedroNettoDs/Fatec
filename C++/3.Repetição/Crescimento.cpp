@@ -43,4 +43,6 @@ int main(){
 		break;
 	}
 	printf ("Precisou de %d anos para Ciclano alcanca-se o tamanho do Fulano", ano);
+    return 0;
 }
+//Ne--o

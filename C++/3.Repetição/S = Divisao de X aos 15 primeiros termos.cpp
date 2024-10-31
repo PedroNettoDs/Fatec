@@ -20,4 +20,6 @@ int main (){
 		divisor++;
 	} while (loop <= 15);
 	printf ("O resultado de S + Divisao de X aos 15 primeiros termos: %f", s);
+    return 0;
 }
+//Ne--o

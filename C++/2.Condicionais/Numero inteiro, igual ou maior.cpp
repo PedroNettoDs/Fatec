@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    // declarando variáveis
+    // declarando variï¿½veis
     int number;
     
     // entrada
@@ -17,7 +17,6 @@ int main() {
     } else {
         printf("O numero e menor que 0\n");
     }
-
     return 0;
 }
-
+//Ne--o

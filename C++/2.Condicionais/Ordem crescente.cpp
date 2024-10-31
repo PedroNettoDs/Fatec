@@ -28,6 +28,7 @@ main (){
 				printf ("%d, %d, Ordenado por crescente", number1, number2);
 			}
 		break;
+	}
+    return 0;
 }
-	return 0;
-}
+//Ne--o

@@ -2,10 +2,10 @@
 #include <math.h>
 
 int main() {
-    // declarando variáveis
+    // declarando variï¿½veis
     float a, b, c, delta, x1, x2;
     
-    // exibição e entrada
+    // exibiï¿½ï¿½o e entrada
     printf("Insira os coeficientes\nA: ");
     scanf("%f", &a);
     printf("B: ");
@@ -29,7 +29,6 @@ int main() {
     } else {
         printf("Nao e equacao de segundo grau.\n");
     }
-
     return 0;
 }
-
+//Ne--o

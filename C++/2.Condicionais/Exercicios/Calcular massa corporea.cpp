@@ -13,7 +13,7 @@ int main (){
     // processamento
     massa = peso / (altura * altura);
     
-    // saída
+    // saï¿½da
     if (massa < 26){
         printf ("Voce esta classificado como: Normal\n");
     } else if (massa >= 26 && massa < 30){
@@ -24,4 +24,4 @@ int main (){
     
     return 0;
 }
-
+//Ne--o

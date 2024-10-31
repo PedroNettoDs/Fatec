@@ -2,7 +2,7 @@
 
 int main ()
 {
-     // Declarando variáveis
+     // Declarando variï¿½veis
      int number1, number2, mult, soma;
      
      // Entrada
@@ -15,10 +15,10 @@ int main ()
      mult = number1 * 5;
      soma = number2 + 10;
      
-     // Saída
-     printf("O resultado da multiplicacao é: %d\n", mult);
-     printf("O resultado da soma é: %d\n", soma);
+     // Saï¿½da
+     printf("O resultado da multiplicacao ï¿½: %d\n", mult);
+     printf("O resultado da soma ï¿½: %d\n", soma);
      
-     return 0;
+    return 0;
 }
-
+//Ne--o

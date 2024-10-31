@@ -4,9 +4,9 @@ int main() {
 	printf ("Super contador de 10 em 10 ate 1000\n");
 
     for (int i = 10; i <= 1000; i += 10) {
-        printf("%d ", i);  // Imprime o número atual da série
+        printf("%d ", i);  // Imprime o nï¿½mero atual da sï¿½rie
     }
     
     return 0;
 }
-
+//Ne--o

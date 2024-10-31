@@ -33,6 +33,6 @@ int main (){
 			break;
 	}
 	printf("Portanto, todos os numeros impares ate 500 somados, resultam em: %d\n", number);
-	return 0;
+    return 0;
 }
-
+//Ne--o

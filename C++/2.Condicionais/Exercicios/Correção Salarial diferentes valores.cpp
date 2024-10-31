@@ -12,7 +12,7 @@ int main() {
     if (salario < 1000) {
         salario = salario * 1.20; // 20% de aumento
         printf("Seu salario atualizado: R$ %.2f\n", salario);
-    } else if (salario >= 1000 && salario <= 5000) { // Correção aqui
+    } else if (salario >= 1000 && salario <= 5000) { // Correï¿½ï¿½o aqui
         salario = salario * 1.10; // 10% de aumento
         printf("Seu salario atualizado: R$ %.2f\n", salario);
     } else if (salario > 5000) {
@@ -21,4 +21,4 @@ int main() {
     
     return 0;
 }
-
+//Ne--o

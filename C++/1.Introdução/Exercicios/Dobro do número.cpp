@@ -14,5 +14,6 @@ int main()
 	
 	//Saida
 	printf("O dobro do numero e = %.d\n", dnumber);	
-	return 0;	
+    return 0;
 }
+//Ne--o

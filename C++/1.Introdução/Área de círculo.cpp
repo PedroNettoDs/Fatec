@@ -14,6 +14,6 @@ int main ()
 	
 	//Saida
 	printf("O calculo da area do triangulo e %f", area);
-	return 0;
+    return 0;
 }
-	
+//Ne--o

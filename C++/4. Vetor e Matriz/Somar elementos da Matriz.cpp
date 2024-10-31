@@ -18,4 +18,4 @@ int main() {
     printf("A somatoria da matriz: %d\n", somatoria);
     return 0;
 }
-
+//Ne--o

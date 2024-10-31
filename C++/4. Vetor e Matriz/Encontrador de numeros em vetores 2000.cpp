@@ -47,6 +47,6 @@ int main (){
 	} while (continuar == 1);
 	
 	printf ("Obrigado!\n");
-	return 0;
+    return 0;
 }
-
+//Ne--o

@@ -23,4 +23,6 @@ int main (){
 	} else {
 		printf ("O valor nao foi sucifiente para cobranca");
 	}
+    return 0;
 }
+//Ne--o
