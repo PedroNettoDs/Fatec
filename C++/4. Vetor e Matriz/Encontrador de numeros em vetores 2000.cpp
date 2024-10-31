@@ -24,7 +24,7 @@ int main (){
 			printf ("n[%d]: %d \n", i, number[i]);
 			
 			if (number[i] == escolha){
-				 posicao[p] = i+1;
+				 posicao[p] = i;
 				 p++;
 			}
 		}
