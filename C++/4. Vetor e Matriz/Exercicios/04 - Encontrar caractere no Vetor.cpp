@@ -11,6 +11,7 @@ int main() {
     srand(time(0));
 
     do {
+        fflush (stdin);
         p = 0;
         printf("Encontrador de caracteres em vetores\nPrimeiro, serao gerados caracteres aleatorios (pressione Enter).\n");
         while ((getchar()) != '\n');
