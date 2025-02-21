@@ -1,4 +1,4 @@
-Algoritmo "Multiplica dois nUmeros"
+Algoritmo "Soma, multiplica e subtrai dois nUmeros"
 
 Var
 a, b,soma, multi, sub: inteiro;
