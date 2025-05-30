@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define MAX 5
 
-// DefiniÁ„o da struct Pessoa
+// Defini√ß√£o da struct Pessoa
 typedef struct {
     char nome[30];
     int idade;
@@ -11,10 +12,8 @@ typedef struct {
 } pessoa;
 
 int main() {
-    pessoa pessoas[MAX]; // Vetor para armazenar atÈ 5 pessoas
-    int i = 0;
-    int n;
-    
+    pessoa pessoas[MAX]; // Vetor para armazenar at√© 5 pessoas
+    int i = 0, n, esc;
     FILE *arquivo;
 
     // Leitura dos dados do arquivo
@@ -24,40 +23,46 @@ int main() {
             i++;
         }
         fclose(arquivo);
+    } else {
+        printf("Arquivo n√£o encontrado. Ser√° criado ao salvar novos dados.\n\n");
     }
 
     int op = 1;
     while (op != 0) { // Menu
-        system("cls"); // Mantido, pois vocÍ j· estava usando
+        system("cls");
         printf("SISTEMA DE FUNCIONARIOS");
         printf("\n\n 1 - Listar");
         printf("\n 2 - Incluir");
+        printf("\n 3 - Alterar");
         printf("\n 0 - Sair");
         printf("\n\nDigite a opcao: ");
         scanf("%d", &op);
 
         if (op == 1) { // Listar
-            system("cls");
+            system("cls || clear");
             printf("SISTEMA DE FUNCIONARIOS\n");
             printf("\nListar funcionarios:\n");
 
             for (n = 0; n < i; n++) {
+                printf("\nFuncionario #%d", n + 1);
                 printf("\nNome: %s", pessoas[n].nome);
                 printf("\nIdade: %d", pessoas[n].idade);
                 printf("\nSalario: %.2f\n", pessoas[n].salario);
             }
 
-            printf("\n\nDigite algo para voltar ao menu...");
-            getchar(); getchar(); // Aguarda Enter
+            printf("\n\nPressione Enter para voltar ao menu...");
+            while (getchar() != '\n'); // limpa buffer
+            getchar();
 
         } else if (op == 2) { // Incluir
             if (i < MAX) {
-                system("cls");
+                system("cls || clear");
                 printf("SISTEMA DE FUNCIONARIOS");
                 printf("\n\nIncluir funcionario:\n");
 
                 printf("Insira o NOME: ");
-                scanf("%s", pessoas[i].nome); // scanf com %s lÍ atÈ espaÁo
+                while (getchar() != '\n'); // limpa buffer
+                scanf(" %[^\n]", pessoas[i].nome);
 
                 printf("Insira a IDADE: ");
                 scanf("%d", &pessoas[i].idade);
@@ -74,25 +79,71 @@ int main() {
                     printf("Erro ao abrir o arquivo para escrita.\n");
                 }
 
-                i++; // Incrementa o n˙mero de pessoas cadastradas
+                i++; // Incrementa o n√∫mero de pessoas cadastradas
             } else {
                 printf("Limite de funcionarios atingido (MAX = %d).\n", MAX);
             }
 
-            printf("\n\nDigite algo para voltar ao menu...");
-            getchar(); getchar(); // Aguarda Enter
+            printf("\n\nPressione Enter para voltar ao menu...");
+            while (getchar() != '\n');
+            getchar();
+
+        } else if (op == 3) { // Alterar
+            system("cls || clear");
+            printf("SISTEMA DE FUNCIONARIOS\n");
+            printf("\nAlterar funcionarios:\n");
+
+            printf("\nInforme o n√∫mero do funcion√°rio (1 a %d): ", i);
+            scanf("%d", &esc);
+            esc = esc - 1;
+
+            if (esc >= 0 && esc < i) {
+                printf("\nFuncionario atual:");
+                printf("\nNome: %s", pessoas[esc].nome);
+                printf("\nIdade: %d", pessoas[esc].idade);
+                printf("\nSalario: %.2f\n", pessoas[esc].salario);
+
+                printf("\n------------ Alterar ------------\n");
+                printf("Insira o NOVO NOME: ");
+                while (getchar() != '\n');
+                scanf(" %[^\n]", pessoas[esc].nome);
+
+                printf("Insira a NOVA IDADE: ");
+                scanf("%d", &pessoas[esc].idade);
+
+                printf("Insira o NOVO SALARIO: ");
+                scanf("%f", &pessoas[esc].salario);
+
+                // Reescreve o arquivo com todos os dados atualizados
+                arquivo = fopen("arquivo.txt", "w");
+                if (arquivo != NULL) {
+                    for (n = 0; n < i; n++) {
+                        fprintf(arquivo, "%s;%d;%.2f\n", pessoas[n].nome, pessoas[n].idade, pessoas[n].salario);
+                    }
+                    fclose(arquivo);
+                } else {
+                    printf("Erro ao abrir o arquivo para sobrescrever.\n");
+                }
+
+            } else {
+                printf("Funcionario invalido.\n");
+            }
+
+            printf("\n\nPressione Enter para voltar ao menu...");
+            while (getchar() != '\n');
+            getchar();
 
         } else if (op == 0) { // Encerrar
-            system("cls");
+            system("cls || clear");
             printf("Sistema encerrado!\n");
 
-        } else { // OpÁ„o inv·lida
+        } else { // Op√ß√£o inv√°lida
             printf("Opcao invalida!");
-            printf("\n\nDigite algo para voltar ao menu...");
-            getchar(); getchar();
+            printf("\n\nPressione Enter para voltar ao menu...");
+            while (getchar() != '\n');
+            getchar();
         }
     }
 
     return 0;
 }
-
