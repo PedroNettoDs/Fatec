@@ -93,7 +93,7 @@ int main() {
             printf("SISTEMA DE FUNCIONARIOS\n");
             printf("\nAlterar funcionarios:\n");
 
-            printf("\nInforme o número do funcionário (1 a %d): ", i);
+            printf("\nInforme o numero do funcionario (1 a %d): ", i);
             scanf("%d", &esc);
             esc = esc - 1;
 
