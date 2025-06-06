@@ -13,7 +13,7 @@ typedef struct {
 
 int main() {
     pessoa pessoas[MAX]; // Vetor para armazenar até 5 pessoas
-    int i = 0, n, esc;
+    int i = 0, n, esc, reg_excluir;
     FILE *arquivo;
 
     // Leitura dos dados do arquivo
@@ -34,6 +34,7 @@ int main() {
         printf("\n\n 1 - Listar");
         printf("\n 2 - Incluir");
         printf("\n 3 - Alterar");
+		printf("\n 4 - Excluir");
         printf("\n 0 - Sair");
         printf("\n\nDigite a opcao: ");
         scanf("%d", &op);
@@ -58,7 +59,7 @@ int main() {
             if (i < MAX) {
                 system("cls || clear");
                 printf("SISTEMA DE FUNCIONARIOS");
-                printf("\n\nIncluir funcionario:\n");
+                printf("\n\nIncluir funcionario: #%d\n", n + 1);
 
                 printf("Insira o NOME: ");
                 while (getchar() != '\n'); // limpa buffer
@@ -131,10 +132,30 @@ int main() {
 
             printf("\n\nPressione Enter para voltar ao menu...");
             while (getchar() != '\n');
-            getchar();
+            getchar();   
+        
+		} else if (op == 4) { // Excluir
+            system("cls");
+            printf("\n Excluir Funcionarios");
+            printf("\n\n Digite o registro a ser excluido: ");
+            scanf("%i", &reg_excluir);
+            	
+            if (esc >= 0 && esc < i) {
+            	reg_excluir = reg_excluir - 1;
+            	for(n = reg_excluir; n < i; n++){
+            		strcpy(pessoas[n].nome, pessoas[n+1].nome);
+					pessoas[n].idade = pessoas[n+1].idade;
+					pessoas[n].salario = pessoas[n+1].idade;	
+				}
+				i=i+1;
+			}else{
+				printf("nao e possivel excluir");
+				printf("\n\ndigite algo para voltar ao menu...");
+            	getchar();
+			}
 
         } else if (op == 0) { // Encerrar
-            system("cls || clear");
+            system("cls");
             printf("Sistema encerrado!\n");
 
         } else { // Opção inválida
@@ -144,6 +165,5 @@ int main() {
             getchar();
         }
     }
-
     return 0;
 }
