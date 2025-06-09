@@ -4,8 +4,9 @@
 // Mostra o menu principal
 void mostrar_menu() {
     printf("\n=== MENU ===\n");
-    printf("1. Criar arquivo de IPs\n");
-    printf("2. Validador de classe IP\n");
+    printf("1. Exibir IPs do arquivo\n");
+    printf("2. Incluir IPs\n");
+    printf("3. Validador de classe IP\n");
     printf("0. Sair\n");
     printf("Escolha: ");
 }
@@ -34,23 +35,23 @@ void criar_arquivo() {
     if (linhas_existentes > 0) {
         printf("\nJa existem %d IP(s) no arquivo ips.txt.\n", linhas_existentes);
         printf("1. Criar novo arquivo (APAGA todos os IPs anteriores)\n");
-        printf("2. Incluir novos IPs ao final do arquivo\n");
+        printf("2. Incluir novos IPs\n");
         printf("Escolha: ");
         scanf("%d", &opcao);
-        getchar(); // Limpa o buffer do teclado
+        getchar();
 
         if (opcao == 1) {
-            arquivo = fopen("ips.txt", "w"); // Sobrescreve tudo
+            arquivo = fopen("ips.txt", "w"); // apaga
             linha_atual = 1;
         } else if (opcao == 2) {
-            arquivo = fopen("ips.txt", "a"); // Acrescenta ao final
+            arquivo = fopen("ips.txt", "a"); // incluir
             linha_atual = linhas_existentes + 1;
         } else {
-            printf("escolha invalida, Voltando ao menu...\n");
+            printf("Escolha invalida, Voltando ao menu...\n");
             return;
         }
     } else {
-        // Se n�o tem arquivo, cria um novo
+        // se nao tem arquivo, cria um novo
         arquivo = fopen("ips.txt", "w");
         linha_atual = 1;
     }
@@ -64,18 +65,17 @@ void criar_arquivo() {
     do {
         printf("\nLinha %d - Digite um IP: ", linha_atual);
         fgets(ip, sizeof(ip), stdin);
-
+        
         // Remove o caractere de "nova linha" (\n) do final, caso exista
         int len = 0;
         while(ip[len] != '\0') {
             if(ip[len] == '\n') ip[len] = '\0';
             len++;
         }
-
-        // Escreve o IP no arquivo, em uma nova linha
+        
+        // Escreve o IP no arquivo
         fprintf(arquivo, "%s\n", ip);
         linha_atual++; 
-
         // Continuar ou sair
         printf("1. Incluir outro IP\n");
         printf("2. Salvar e voltar ao menu\n");
@@ -84,14 +84,13 @@ void criar_arquivo() {
         getchar();
 
     } while(opcao == 1);
-
     fclose(arquivo); // Fecha o arquivo depois de terminar
     printf("\nArquivo salvo como ips.txt\n");
 }
 
 // Funcao para ler o arquivo, classificar os IPs e sobrescreve-los com suas classes
 void validar_arquivo() {
-    FILE *arquivo_leitura, *arquivo_temp;
+    FILE *arquivo_leitura, *arquivo_saida;
     char linha[100];
     int primeiro_octeto;
 
@@ -101,61 +100,76 @@ void validar_arquivo() {
         return;
     }
 
-    arquivo_temp = fopen("ips_temp.txt", "w");
-    if (arquivo_temp == NULL) {
-        printf("Erro ao criar arquivo temporario.\n");
+    arquivo_saida = fopen("ips-validados.txt", "w");
+    if (arquivo_saida == NULL) {
+        printf("Erro ao criar arquivo de saida.\n");
         fclose(arquivo_leitura);
         return;
     }
 
     while (fgets(linha, sizeof(linha), arquivo_leitura)) {
-        // Remove newline se houver
+        // Remove newline
         int len = 0;
         while (linha[len] != '\0') {
             if (linha[len] == '\n') linha[len] = '\0';
             len++;
         }
 
-        // Tenta extrair o primeiro octeto
+        // Extrair o primeiro octeto
         if (sscanf(linha, "%d", &primeiro_octeto) == 1) {
-            if (primeiro_octeto >= 1 && primeiro_octeto <= 126)
-                fprintf(arquivo_temp, "%s - Classe A\n", linha);
-            else if (primeiro_octeto >= 128 && primeiro_octeto <= 191)
-                fprintf(arquivo_temp, "%s - Classe B\n", linha);
-            else if (primeiro_octeto >= 192 && primeiro_octeto <= 223)
-                fprintf(arquivo_temp, "%s - Classe C\n", linha);
-            else
-                fprintf(arquivo_temp, "%s - Classe Desconhecida\n", linha);
-        } else {
-            fprintf(arquivo_temp, "%s - Classe Desconhecida\n", linha);
+            if (primeiro_octeto >= 1 && primeiro_octeto <= 126) {
+                fprintf(arquivo_saida, "%s - Classe A\n", linha);
+            } else if (primeiro_octeto >= 128 && primeiro_octeto <= 191) {
+                fprintf(arquivo_saida, "%s - Classe B\n", linha);
+            } else if (primeiro_octeto >= 192 && primeiro_octeto <= 223) {
+                fprintf(arquivo_saida, "%s - Classe C\n", linha);
+            } else {
+                fprintf(arquivo_saida, "%s - Classe Desconhecida\n", linha);
+            }
         }
     }
 
     fclose(arquivo_leitura);
-    fclose(arquivo_temp);
+    fclose(arquivo_saida);
 
-    // Substitui o arquivo original pelo novo
-    remove("ips.txt");
-    rename("ips_temp.txt", "ips.txt");
-
-    printf("\nArquivo atualizado com as classes dos IPs.\n");
+    printf("\nArquivo criado: ips-validados.txt com as classes dos IPs.\n");
 }
 
-// Funcao principal que executa o menu
+// Funcao para exibir os IPs do arquivo ips.txt
+void exibir_ips() {
+    FILE *arquivo;
+    char linha[100];
+
+    arquivo = fopen("ips.txt", "r");
+    if (arquivo == NULL) {
+        printf("Arquivo ips.txt nao encontrado.\n");
+        return;
+    }
+
+    printf("\n=== IPs no arquivo ===\n");
+    while (fgets(linha, sizeof(linha), arquivo)) {
+        printf("%s", linha);
+    }
+    fclose(arquivo);
+}
+
 int main() {
     int escolha;
 
     do {
         mostrar_menu();
         scanf("%d", &escolha);
-        getchar(); // Limpa o buffer do teclado
+        getchar();
 
-        switch(escolha) {
+        switch (escolha) {
             case 1:
-                criar_arquivo();
+            	exibir_ips();
                 break;
             case 2:
-                validar_arquivo();
+            	criar_arquivo();
+                break;
+            case 3:
+				validar_arquivo();
                 break;
             case 0:
                 printf("Saindo...\n");
@@ -163,8 +177,7 @@ int main() {
             default:
                 printf("Escolha invalida!\n");
         }
-    } while(escolha != 0);
+    } while (escolha != 0);
 
     return 0;
 }
-
