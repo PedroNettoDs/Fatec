@@ -1,4 +1,4 @@
-# Aula ministrada pelo professor Luis Alexandre da Silva
+# Aula ministrada pelo professor Anderson Francisco Talon
 
 Este repositório contém materiais e recursos da aula ministrada pelo professor [Anderson Francisco 'Talon'](https://www.linkedin.com/in/anderson-francisco-talon/).
 
